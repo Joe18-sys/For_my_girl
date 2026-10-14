@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para La Mas Hermosa ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        
+        <div id="screen-welcome" class="screen active">
+            <h1>Hola Amor ❤️</h1>
+            <p>He preparado una sorpresa para ti. Para poder descubrirla primero debes superar un pequeño desafío.</p>
+            <button class="btn" onclick="startReflexGame()">Comenzar Desafío 🎮</button>
+        </div>
+
+        <div id="screen-reflex-game" class="screen">
+            <div class="game-hud">
+                <div>Atrapa los corazones: <span id="reflex-score">0</span> / 10</div>
+            </div>
+            <div class="game-area" id="game-area"></div>
+        </div>
+
+        <div id="screen-envelope" class="screen">
+            <h1>Lo completaste 🎉</h1>
+            <p>Has atrapado todos los corazones. Tienes una carta especial. Toca el sobre para abrirla.</p>
+            <div class="envelope-wrapper" onclick="openEnvelope()">
+                <div class="envelope" id="envelope">
+                    <div class="envelope-seal">❤️</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-letter" class="screen">
+            <div class="letter">
+                <h2>Para La Mas Hermosa ❤️</h2>
+                <p>Querida Angélica,</p>
+                <p>Hice este pequeño detalle para recordarte lo mucho que me importas y lo feliz que me hace tenerte en mi vida.</p>
+                <p>Cada momento a tu lado es único e inigualable. Gracias por tu sonrisa, por tu apoyo y por ser exactamente como eres.</p>
+                <p>Espero que esta pequeña sorpresa te haya sacado una gran sonrisa, porque te mereces eso y muchísimo más.</p>
+                <div class="signature">Con todo mi amor,<br>Joensi ❤️</div>
+            </div>
+            <button class="btn" style="margin-top: 25px;" onclick="goToCoupons()">Ver tus Cupones Especiales 🎟️</button>
+        </div>
+
+        <div id="screen-coupons" class="screen">
+            <h1>Cupones de Citas Especiales 🎟️</h1>
+            <p>Elige el día que tengas disponible para canjear cada uno de tus cupones:</p>
+            
+            <div class="coupons-container">
+                <div class="coupon" id="coupon-1">
+                    <div class="coupon-icon">🍕</div>
+                    <div class="coupon-title">Noche de Comida Favorita</div>
+                    <input type="date" class="date-picker-input" id="date-1">
+                    <button class="btn btn-small" onclick="redeemCoupon(1)">Canjear Cupón</button>
+                    <div class="redeemed-badge" id="badge-1">Agendado</div>
+                </div>
+
+                <div class="coupon" id="coupon-2">
+                    <div class="coupon-icon">🎬</div>
+                    <div class="coupon-title">Maratón de Películas / Series</div>
+                    <input type="date" class="date-picker-input" id="date-2">
+                    <button class="btn btn-small" onclick="redeemCoupon(2)">Canjear Cupón</button>
+                    <div class="redeemed-badge" id="badge-2">Agendado</div>
+                </div>
+
+                <div class="coupon" id="coupon-3">
+                    <div class="coupon-icon">🍦</div>
+                    <div class="coupon-title">Cita por un Helado y Paseo</div>
+                    <input type="date" class="date-picker-input" id="date-3">
+                    <button class="btn btn-small" onclick="redeemCoupon(3)">Canjear Cupón</button>
+                    <div class="redeemed-badge" id="badge-3">Agendado</div>
+                </div>
+
+                <div class="coupon" id="coupon-4">
+                    <div class="coupon-icon">👑</div>
+                    <div class="coupon-title">Hacer lo que quieras sin excepciones</div>
+                    <input type="date" class="date-picker-input" id="date-4">
+                    <button class="btn btn-small" onclick="redeemCoupon(4)">Canjear Cupón</button>
+                    <div class="redeemed-badge" id="badge-4">Agendado</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
